@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Anime Template">
+    <meta name="keywords" content="Anime, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Comic-template</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-route/1.8.2/angular-route.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.2/angular.min.js"></script>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="css/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="css/plyr.css" type="text/css">
+    <link rel="stylesheet" href="css/nice-select.css" type="text/css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="css/style2.css" type="text/css">
+</head>
+
+<body  ng-app="myapp"   ng-controller="myctrl">
+    <!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Header Section Begin -->
+    <header class="header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-2">
+                    <div class="header__logo">
+                        <a href="./index.html">
+                            <img src="img/logo.png" alt="">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-8">
+                    <div class="header__nav">
+                        <nav class="header__menu mobile-menu">
+                            <ul>
+                                <li class="active"><a href="./index.html">Homepage</a></li>
+                                <li><a href="./categories.html">Categories <span class="arrow_carrot-down"></span></a>
+                                    <ul class="dropdown">
+                                        <li><a href="./Top-View.html">Top-View</a></li>                                       
+                                        <li><a href="./anime-watching.html">Anime Watching</a></li>
+                                        <li><a href="./blog-details.html">Blog Details</a></li>
+                                        <li><a href="./signup.html">Sign Up</a></li>
+                                        <li><a href="./login.html">Login</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="./blog.html">Our Blog</a></li>
+                                <li><a href="#">Contacts</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+                <div class="col-lg-2">
+                    <div class="header__right">
+                        <a href="#" class="search-switch"><span class="icon_search"></span></a>
+                        <a href="./login.html"><span class="icon_profile"></span></a>
+                    </div>
+                </div>
+            </div>
+            <div id="mobile-menu-wrap"></div>
+        </div>
+    </header>
+    <!-- Header End -->
+<style>
+
+</style>
+    <!-- Hero Section Begin -->
+    <form class="F">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h2 class="panel-title">View synthetic</h2>
+            </div>
+            <table class="table">
+                <tr>
+                    <th></th>
+                    <th>Comic name</th>
+                  
+                    <th>View</th>
+                    
+                </tr>
+                <tr ng-repeat="item in items" ng-init="item.quantity=1">
+                    <td>
+                        <input type="checkbox" ng-model="item.buy">
+                    </td>
+                    <td ng-bind="item.name"></td>
+                   
+                    <td ng-bind="item.price"></td>
+                   
+                </tr>
+            </table>
+            <div class="panel-footer">
+                TOTAL VIEW: {{getAmount()}}
+            </div>
+        </div>
+    </form>
+
+    
+
+
+    <!-- Hero Section End -->
+
+    <!-- Product Section Begin -->
+    
+<!-- Product Section End -->
+
+<!-- Footer Section Begin --> 
+
+<!-- Search model end -->
+
+<!-- Js Plugins -->
+<script>
+    var app = angular.module("myapp", []);
+    app.controller("myctrl", function ($scope) {
+        $scope.items = [
+            {
+                name: "Solo-leveling",
+                price: 202369141  
+            },
+            {
+                name: "Bach luyen thanh than",
+                price: 136721845
+            },
+            {
+                name: "Vo luyen din phong",
+                price:  187206250
+            }
+        ];
+        $scope.getAmount = function () {
+            var amount = 0;
+            for (var i = 0; i < $scope.items.length; i++) {
+                if ($scope.items[i].buy) {
+                    amount += $scope.items[i].price * $scope.items[i].quantity;
+                }
+            }
+            return amount;
+        };
+    });
+</script>
+<script src="angular-1.8.2/angular.min.js"></script>
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/player.js"></script>
+<script src="js/jquery.nice-select.min.js"></script>
+<script src="js/mixitup.min.js"></script>
+<script src="js/jquery.slicknav.js"></script>
+<script src="js/owl.carousel.min.js"></script>
+<script src="js/main.js"></script>
+
+</body>
+
+</html>
